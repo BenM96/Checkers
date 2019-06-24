@@ -8,6 +8,7 @@ namespace Checkers
 {
     class Piece
     {
+        private int id;
         private Location location;
         private char colour;
 
@@ -15,6 +16,32 @@ namespace Checkers
         {
             this.colour = colour;
             this.location = new Location(col, row);
+        }
+
+        public int ID
+        {
+            get
+            {
+                return this.id;
+
+            }
+        }
+        public Location Local {
+            get
+            {
+                return this.location;
+            }
+            set
+            {
+                this.location = value;
+            }
+                }
+        public char Colour
+        {
+            get
+            {
+                return this.colour;
+            }
         }
     }
 }

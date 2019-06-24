@@ -8,23 +8,33 @@ namespace Checkers
 {
     class Location
     {
-        private int[] local = new int[2];
+        private int col;
+        private int row;
 
         public Location(int col, int row)
         {
-            this.local[0] = col;
-            this.local[1] = row;
+            this.col = col;
+            this.row = row;
         }
 
-        public int[] Local
-        {
+        public int Col {
             get
             {
-                return this.local;
+                return this.col;
             }
             set
             {
-                this.local = value;
+                this.col = value;
+            }
+        }
+        public int Row {
+            get
+            {
+                return this.row;
+            }
+            set
+            {
+                this.row = value;
             }
         }
     }
