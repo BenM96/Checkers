@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Checkers
 {
-    class Program
+    static class PrintBoard
     {
-        static void Main(string[] args)
+        public static void Print(Board board)
         {
-            Board board = new Board();
-            PrintBoard.Print(board);
+            Console.WriteLine("hello");
         }
     }
 }
