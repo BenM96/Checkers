@@ -8,41 +8,37 @@ namespace Checkers
 {
     class Board
     {
-        private Piece[] blacks = new Piece[12];
-        private Piece[] whites = new Piece[12];
+        private Team blacks;
+        private Team whites;
+
+
+
 
         public Board()
         {
-            int col = 1;
-            int bRow;
-            int wRow;
-            while (col < 9)
-            {
-                if (col % 2 == 0)
-                {
-                    bRow = 2;
-                    wRow = 8;
-                }
-                else
-                {
-                    bRow = 1;
-                    wRow = 7;
-                }
-                blacks[col-1] = new Piece(col, bRow, 'b');
-                whites[col-1] = new Piece(col, wRow, 'w');
-                col++;
-            }
-            col = 1;
-            while (col < 9)
-            {
-                Console.Write(col);
-                blacks[8+(col/2)] = new Piece(col, 3, 'b');
-                whites[8 + (col / 2)] = new Piece(col + 1, 6, 'w');
-                col += 2;
-            }
+            this.blacks = new Team('B');
+            this.whites = new Team('W');
         }
 
-        public Piece[] Whites
+        public char Occupant(Location local)
+        {
+            if (blacks.Occupied(local))
+            {
+                return 'B';
+            }
+            if (whites.Occupied(local))
+            {
+                return 'W';
+            }
+            return 'X';
+        }
+
+        public char Occupant(int col,int row)
+        {
+            Location local = new Location(col, row);
+            return Occupant(local);
+        }
+        public Team Whites
         {
             get
             {
@@ -53,7 +49,7 @@ namespace Checkers
                 this.whites = value;
             }
         }
-        public Piece[] Blacks
+        public Team Blacks
         {
             get
             {

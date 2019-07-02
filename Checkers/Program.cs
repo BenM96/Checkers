@@ -12,6 +12,8 @@ namespace Checkers
         {
             Board board = new Board();
             PrintBoard.Print(board);
+            Piece p = (Piece)board.Blacks.Pieces[0];
+            
         }
     }
 }

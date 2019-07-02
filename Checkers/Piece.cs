@@ -6,26 +6,14 @@ using System.Threading.Tasks;
 
 namespace Checkers
 {
-    class Piece
+    abstract class Piece
     {
-        private int id;
         private Location location;
         private char colour;
+        private int direction;
 
-        public Piece(int col, int row, char colour)
-        {
-            this.colour = colour;
-            this.location = new Location(col, row);
-        }
+        public abstract bool Move(int col, int row);
 
-        public int ID
-        {
-            get
-            {
-                return this.id;
-
-            }
-        }
         public Location Local {
             get
             {
@@ -41,6 +29,21 @@ namespace Checkers
             get
             {
                 return this.colour;
+            }
+            set
+            {
+                this.colour = value;
+            }
+        }
+        public int Direction
+        {
+            get
+            {
+                return this.direction;
+            }
+            set
+            {
+                this.direction = value;
             }
         }
     }
