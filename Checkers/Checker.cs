@@ -15,7 +15,7 @@ namespace Checkers
             Colour = colour;
             Direction = direction;
         }
-        public override bool Move(int col, int row)
+        public override bool ValidMove(int col, int row)
         {
             return false;
         }

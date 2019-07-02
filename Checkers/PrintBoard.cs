@@ -10,11 +10,12 @@ namespace Checkers
     {
         public static void Print(Board board)
         {
+            Occupant O= new Occupant(board);
             for(int row = 8; row > 0; row--)
             {
                 for(int col =1; col<9; col++)
                 {
-                    Console.Write(board.Occupant(col, row));
+                    Console.Write(O.Team(col, row));
                 }
                 Console.WriteLine();
             }

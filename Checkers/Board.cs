@@ -20,24 +20,8 @@ namespace Checkers
             this.whites = new Team('W');
         }
 
-        public char Occupant(Location local)
-        {
-            if (blacks.Occupied(local))
-            {
-                return 'B';
-            }
-            if (whites.Occupied(local))
-            {
-                return 'W';
-            }
-            return 'X';
-        }
+        
 
-        public char Occupant(int col,int row)
-        {
-            Location local = new Location(col, row);
-            return Occupant(local);
-        }
         public Team Whites
         {
             get

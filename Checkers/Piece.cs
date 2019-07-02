@@ -11,9 +11,20 @@ namespace Checkers
         private Location location;
         private char colour;
         private int direction;
+        private int index;
 
-        public abstract bool Move(int col, int row);
+        public abstract bool ValidMove(int col, int row);
 
+        public void move(int col, int row)
+        {
+            location = new Location(col, row); 
+        }
+
+        public int Index
+        {
+            get { return this.index; }
+            set { this.index = value; }
+        }
         public Location Local {
             get
             {

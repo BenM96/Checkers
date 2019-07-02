@@ -13,16 +13,16 @@ namespace Checkers
         private char name;
         private int direction;
 
-        public bool Occupied(Location local)
+        public Piece Occupied(Location local)
         {
             foreach (Piece p in Pieces)
             {
                 if (p.Local.Col == local.Col & p.Local.Row==local.Row)
                 {
-                    return true;
+                    return p;
                 }
             }
-            return false;
+            return null;
         }
 
 
@@ -63,6 +63,10 @@ namespace Checkers
                 {
                     pieces.Add(new Checker(col, startingRow + 1, name, direction));
                 }
+            }
+            foreach (Piece p in pieces)
+            {
+                p.Index=pieces.IndexOf(p);
             }
 
         }
