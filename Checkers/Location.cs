@@ -17,6 +17,12 @@ namespace Checkers
             this.row = row;
         }
 
+        public Location add(int col, int row)
+        {
+            Location local = new Location(this.col + col, this.row + row);
+            return local;
+        }
+
         public int Col {
             get
             {

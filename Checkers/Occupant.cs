@@ -8,17 +8,18 @@ namespace Checkers
 {
     class Occupant
     {
-        private Board board;
+        private Team whites;
+        private Team blacks;
 
         public Piece Piece(Location local)
         {
-            if (!(board.Blacks.Occupied(local) is null))
+            if (!(blacks.Occupied(local) is null))
             {
-                return board.Blacks.Occupied(local);
+                return blacks.Occupied(local);
             }
-            if (!(board.Whites.Occupied(local) is null))
+            if (!(whites.Occupied(local) is null))
             {
-                return board.Whites.Occupied(local);
+                return whites.Occupied(local);
             }
             return null;
         }
@@ -47,12 +48,15 @@ namespace Checkers
 
         public Occupant(Board board)
         {
-            this.board = board;
+            this.whites = board.Whites;
+            this.blacks = board.Blacks;
         }
-        public Board Board
+
+        public Occupant(Team whites, Team blacks)
         {
-            get { return this.board; }
-            set { this.board = value; }
+            this.whites = whites;
+            this.blacks = blacks;
         }
+        
     }
 }

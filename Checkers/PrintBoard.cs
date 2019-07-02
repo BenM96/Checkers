@@ -10,6 +10,7 @@ namespace Checkers
     {
         public static void Print(Board board)
         {
+            Console.WriteLine();
             Occupant O= new Occupant(board);
             for(int row = 8; row > 0; row--)
             {
@@ -19,6 +20,7 @@ namespace Checkers
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine();
         }
     }
 }

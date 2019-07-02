@@ -20,7 +20,12 @@ namespace Checkers
             this.whites = new Team('W');
         }
 
-        
+        public void move(Location from, Location too)
+        {
+            Occupant occupant = new Occupant(this.whites, this.blacks);
+            Piece mover = occupant.Piece(from);
+            mover.Local = too;
+        }
 
         public Team Whites
         {
