@@ -10,8 +10,8 @@ namespace Checkers
     {
         public static bool TakeTurn(Board board, char colour, Location from, Location too)
         {
-            Occupant occupant = new Occupant(board);
-            Piece mover = occupant.Piece(from);
+            Occupant O = new Occupant(board);
+            Piece mover = O.Piece(from);
             if(mover is null)
             {
                 return false;
@@ -20,8 +20,16 @@ namespace Checkers
             {
                 return false;
             }
-
-            return false;
+            if (mover.ValidMove(too, board))
+            {
+                mover.move(too);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("invalid move bozo");
+                return false;
+            }
         }
     }
 }

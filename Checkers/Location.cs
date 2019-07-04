@@ -17,10 +17,22 @@ namespace Checkers
             this.row = row;
         }
 
-        public Location add(int col, int row)
+        public Location Add(int col, int row)
         {
             Location local = new Location(this.col + col, this.row + row);
             return local;
+        }
+
+        public bool Equals(Location same)
+        {
+            if(same.Col==this.col & same.Row == this.row)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public int Col {

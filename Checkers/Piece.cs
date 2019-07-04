@@ -13,11 +13,21 @@ namespace Checkers
         private int direction;
         private int index;
 
-        public abstract bool ValidMove(int col, int row);
+        public abstract bool ValidMove(Location too, Board board);
+
+        public bool ValidMove(int col, int row, Board board)
+        {
+            return ValidMove(new Location(col, row), board);
+        }
 
         public void move(int col, int row)
         {
-            location = new Location(col, row); 
+            this.location = new Location(col, row); 
+        }
+
+        public void move(Location too)
+        {
+            this.location = too;
         }
 
         public int Index

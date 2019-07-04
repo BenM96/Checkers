@@ -12,7 +12,8 @@ namespace Checkers
         {
             Board board = new Board();
             PrintBoard.Print(board);
-            board.move(LocationConverter.Local(1, 3), LocationConverter.Local(1, 4));
+
+            Turn.TakeTurn(board, 'B', new Location(1,3), new Location(2, 4));
             PrintBoard.Print(board);
 
             

@@ -16,15 +16,50 @@ namespace Checkers
             Direction = direction;
         }
 
-        public bool ValidMove(Location too)
+        public override bool ValidMove(Location too, Board board)
         {
-            
-            return true;
+            if (validDiaganalMove(too, board))
+            {
+                return true;
+            }
+            return false;
         }
-        public override bool ValidMove(int col, int row)
-        {
-            return ValidMove(new Location(col, row));
-        }
+        
 
+        private bool validDiaganalMove(Location too, Board board)
+        {
+            bool occupied;
+            bool inReach;
+            Occupant O = new Occupant(board);
+            if (O.Team(too) == 'X')
+            {
+                occupied = false;
+            }
+            else
+            {
+                occupied = true;
+                return false;
+            }
+            if (this.Local.Add(1, 1 * this.Direction).Equals(too) )
+            {
+                inReach = true;
+            }
+            else if (this.Local.Add(-1, 1 * Direction) == too)
+            {
+                inReach = true;
+            }
+            else
+            {
+                inReach = false;
+            }
+            if(inReach & !occupied)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
