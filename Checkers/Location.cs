@@ -23,6 +23,11 @@ namespace Checkers
             return local;
         }
 
+        public void show()
+        {
+            Console.WriteLine(this.col + " " + this.row);
+        }
+
         public bool Equals(Location same)
         {
             if(same.Col==this.col & same.Row == this.row)

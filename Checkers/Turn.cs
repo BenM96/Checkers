@@ -14,15 +14,18 @@ namespace Checkers
             Piece mover = O.Piece(from);
             if(mover is null)
             {
+                Console.WriteLine("there is nothing there");
                 return false;
             }
             if (!(mover.Colour == colour))
             {
+                Console.WriteLine("That is not your piece there");
                 return false;
             }
             if (mover.ValidMove(too, board))
             {
                 mover.move(too);
+                Console.WriteLine("valid move");
                 return true;
             }
             else

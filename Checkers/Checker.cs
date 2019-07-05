@@ -38,19 +38,22 @@ namespace Checkers
             else
             {
                 occupied = true;
+                Console.WriteLine("someone else is all ready there");
                 return false;
             }
             if (this.Local.Add(1, 1 * this.Direction).Equals(too) )
             {
                 inReach = true;
             }
-            else if (this.Local.Add(-1, 1 * Direction) == too)
+            else if (this.Local.Add(-1, 1 * Direction).Equals( too))
             {
                 inReach = true;
             }
             else
             {
                 inReach = false;
+                Console.WriteLine("That is not in reach");
+                return false;
             }
             if(inReach & !occupied)
             {

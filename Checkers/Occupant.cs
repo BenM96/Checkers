@@ -46,6 +46,11 @@ namespace Checkers
             return Team(local);
         }
 
+        public void update(Board board)
+        {
+            this.whites = board.Whites;
+            this.blacks = board.Blacks;
+        }
         public Occupant(Board board)
         {
             this.whites = board.Whites;

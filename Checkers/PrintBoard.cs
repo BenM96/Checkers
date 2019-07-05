@@ -14,11 +14,20 @@ namespace Checkers
             Occupant O= new Occupant(board);
             for(int row = 8; row > 0; row--)
             {
+                Console.Write("|");
                 for(int col =1; col<9; col++)
                 {
-                    Console.Write(O.Team(col, row));
+                    if (O.Team(col, row) == 'X')
+                    {
+                        Console.Write(" |");
+                    }
+                    else
+                    {
+                        Console.Write(O.Team(col, row)+"|");
+
+                    }
                 }
-                Console.WriteLine();
+                Console.WriteLine("\n - - - - - - - -");
             }
             Console.WriteLine();
         }

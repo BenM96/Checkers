@@ -11,9 +11,13 @@ namespace Checkers
         static void Main(string[] args)
         {
             Board board = new Board();
+            bool whiteTurn = false;
+            Occupant O = new Occupant(board);
             PrintBoard.Print(board);
 
-            Turn.TakeTurn(board, 'B', new Location(1,3), new Location(2, 4));
+            Turn.TakeTurn(board, 'W', new Location(2,6), new Location(1, 5));
+            Turn.TakeTurn(board, 'W', new Location(1, 5), new Location(2, 4));
+            
             PrintBoard.Print(board);
 
             
